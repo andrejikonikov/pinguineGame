@@ -18,6 +18,8 @@
   "homepage": "https://github.com/andrejikonikov/pinguineGame#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-serve": "^1.4.0"
   }
 }
