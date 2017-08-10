@@ -1,5 +1,57 @@
 body {
-  background: #E7F3FF; }
+  background: #E7F3FF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0; }
+  body .cloud {
+    left: -30%;
+    background: #FFFFFF;
+    border-radius: 45%;
+    height: 2em;
+    top: 3em;
+    position: relative;
+    width: 4em;
+    -webkit-animation: cloudTransition 40s infinite;
+    -moz-animation: cloudTransition 40s infinite;
+    -o-animation: cloudTransition 40s infinite;
+    animation: cloudTransition 40s infinite; }
+    body .cloud.bigger {
+      -ms-transform: scale(2);
+      /* IE 9 */
+      -webkit-transform: scale(2);
+      /* Safari */
+      transform: scale(2);
+      top: 6em;
+      -webkit-animation-delay: 3s;
+      /* Safari 4.0 - 8.0 */
+      animation-delay: 3s;
+      -webkit-animation-duration: 50s;
+      /* Safari 4.0 - 8.0 */
+      animation-duration: 50s; }
+    body .cloud.delayed {
+      top: 4em;
+      -webkit-animation-delay: 11s;
+      /* Safari 4.0 - 8.0 */
+      animation-delay: 11s; }
+    body .cloud::before, body .cloud::after {
+      background: #fff;
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-indeX: -1; }
+    body .cloud::before {
+      width: 1.5em;
+      height: 1.5em;
+      top: -0.5em;
+      left: 0.5em; }
+    body .cloud::after {
+      width: 2em;
+      height: 2em;
+      top: -1em;
+      left: 1.5em; }
   body #ground {
     position: absolute;
     background: #99D9FF;
@@ -50,6 +102,30 @@ body {
     left: -1em; }
   body #pinguin #right {
     left: 1em; }
+
+@-webkit-keyframes cloudTransition {
+  0% {
+    left: -30%; }
+  100% {
+    left: 150%; } }
+
+@-moz-keyframes cloudTransition {
+  0% {
+    left: -30%; }
+  100% {
+    left: 150%; } }
+
+@-o-keyframes cloudTransition {
+  0% {
+    left: -30%; }
+  100% {
+    left: 150%; } }
+
+@keyframes cloudTransition {
+  0% {
+    left: -30%; }
+  100% {
+    left: 150%; } }
 
 @-webkit-keyframes bounce {
   0% {

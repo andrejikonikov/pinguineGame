@@ -36,12 +36,65 @@ $fifthColor: #7FD9FF;
     }
 }
 
-
 $pinguinPosition: 16em;
 $pinguinHeight: 5em;
 
 body {
     background: $secondColor;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    .cloud {
+        left: -30%;
+    	background: $firstColor;
+        border-radius: 45%;
+    	height: 2em;
+        top: 3em;
+
+    	position: relative;
+    	width: 4em;
+        &.bigger {
+            -ms-transform: scale(2); /* IE 9 */
+            -webkit-transform: scale(2); /* Safari */
+            transform: scale(2);
+            top: 6em;
+            -webkit-animation-delay: 3s; /* Safari 4.0 - 8.0 */
+            animation-delay: 3s;
+            -webkit-animation-duration: 50s; /* Safari 4.0 - 8.0 */
+            animation-duration: 50s;
+        }
+        &.delayed {
+            top: 4em;
+            -webkit-animation-delay: 11s; /* Safari 4.0 - 8.0 */
+            animation-delay: 11s;
+        }
+
+        @include animation('cloudTransition 40s infinite');
+
+        &::before, &::after {
+            background: #fff;
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            z-indeX: -1;
+        }
+        &::before {
+            width: 1.5em;
+            height: 1.5em;
+            top: -0.5em;
+            left: 0.5em;
+        }
+        &::after {
+            width: 2em;
+            height: 2em;
+            top: -1em;
+            left: 1.5em;
+        }
+
+    }
 
 
     #ground {
@@ -74,7 +127,7 @@ body {
                 height: 3em;
                 top: 2em;
                 width: 2em;
-                background-color: #FFFFFF;
+                background-color: $firstColor;
                 border-top-right-radius: 10%;
                 border-top-left-radius: 80%;
                 border-bottom-left-radius: 38%;
@@ -103,6 +156,11 @@ body {
             left: 1em;
         }
     }
+}
+
+@include keyframes(cloudTransition) {
+    0% { left: -30%; }
+    100% { left: 150%; }
 }
 
 @include keyframes(bounce) {
